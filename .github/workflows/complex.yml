@@ -4,25 +4,18 @@ on: push
 
 jobs:
     ubuntu:
-        name: First Job
         runs-on: ubuntu-latest
         steps:
-            - run: data
-    windows:
-        name: Second Job
-        runs-on: windows-latest
-        steps:
-            - run: data
+            - run: date
+    windows: windows-latest
+        runs-on:
+        - run: date
     macos:
-        needs: [job1, job2]
-        name: Third Job
         runs-on: macos-latest
-        steps:
-            - run: data
+        - run: date
      depends:  
       needs: ubuntu,windows,macos
       runs-on: macos-latest
-      steps:
-        -run:date
+      - run: date
         
             
