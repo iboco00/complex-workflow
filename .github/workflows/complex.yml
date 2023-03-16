@@ -6,16 +6,18 @@ jobs:
     ubuntu:
         runs-on: ubuntu-latest
         steps:
-            - run: date
-    windows: windows-latest
-        runs-on:
-        - run: date
+            -run: date
+    windows: 
+        runs-on: windows-latest
+        steps:
+            -run: date
     macos:
         runs-on: macos-latest
-        - run: date
-     depends:  
-      needs: ubuntu,windows,macos
-      runs-on: macos-latest
-      - run: date
+        steps:
+            -run: date
+     depends:
+        needs: ubuntu,windows,macos
+        runs-on: macos-latest
+      -  run: date
         
             
